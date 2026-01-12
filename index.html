@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task Tracker</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1>Task Tracker</h1>
+        <p>Organize tasks. Track deadlines. Stay productive.</p>
+      </div>
+    </header>
+
+    <section class="input-section">
+      <form id="task-form">
+        <input id="task-input" type="text" placeholder="What do you need to do?" required />
+        <input id="date-input" type="date" />
+        <select id="priority-select">
+          <option value="normal">Normal</option>
+          <option value="mild">Mild</option>
+          <option value="urgent">Urgent</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="active">Active</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="stats">
+          <span id="counts">0 total • 0 active • 0 done</span>
+          <button id="clear-completed" class="ghost">Clear Completed</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="list-section">
+      <ul id="task-list"></ul>
+
+      <div id="empty" class="empty-state">
+        <h3>No tasks yet</h3>
+        <p>Add a task above and start being productive 🚀</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built with ❤️ by Ansh</p>
+    </footer>
+  </main>
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3>Edit Task</h3>
+      <form id="edit-form">
+        <input id="edit-text" type="text" required />
+        <input id="edit-date" type="date" />
+        <select id="edit-priority">
+          <option value="normal">Normal</option>
+          <option value="mild">Mild</option>
+          <option value="urgent">Urgent</option>
+        </select>
+
+        <div class="modal-actions">
+          <button type="button" id="modal-cancel" class="ghost">Cancel</button>
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
